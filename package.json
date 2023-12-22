@@ -11,7 +11,13 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.3",
+    "@astrojs/netlify": "^4.0.1",
+    "@auth/core": "^0.18.6",
     "astro": "^4.0.7",
+    "auth-astro": "^4.1.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "astro-icon": "^0.8.2"
   }
 }

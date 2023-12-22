@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon';
+---
+
+<!--
+<script is:inline src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+<script is:inline src="/scripts/app.js"></script>
+-->
+<script is:inline src="https://cdn.auth0.com/js/auth0/9.18/auth0.min.js"></script>
+<script is:inline src="/scripts/mylogin.js"></script>
+
+
+
+<Layout title="Login">
+    <main class="flex flex-col gap-4 items-center justify-center h-screen">
+        <div
+            class="flex flex-col gap-2 rounded-xl overflow-hidden font-sans border-2 border-base-neutral p-4"
+        >
+
+        <form class="verification-code-form" onsubmit="event.preventDefault(); askCode();">
+                <input id="email-input" type="text" placeholder="aa@bb.fr" required value="">
+
+                <button type="submit" >
+                  Valider
+                </button>
+            </form>
+           <button
+               id="qsLoginBtn"
+               onclick="login()"
+               class="btn btn-primary btn-margin auth-invisible hidden"
+             >
+               Log in
+             </button>
+
+    <form class="verification-code-form" onsubmit="event.preventDefault(); sendCode();">
+        <input id="validation-code-input" type="tel" placeholder="000000" required value="">
+
+        <button type="submit" >
+          Valider
+        </button>
+    </form>
+
+             <button
+                id="qsLoginBtn"
+                onclick="sendcode()"
+                class="btn btn-primary btn-margin auth-invisible hidden"
+              >
+                Send code
+              </button>
+
+
+        </div>
+        <div>
+        <button
+                        id="qsLoginBtn"
+                        onclick="socialConnect('facebook')"
+                        class="btn btn-primary btn-margin auth-invisible hidden"
+                      >
+                        Facebook
+                      </button>
+
+        </div>
+    </main>
+</Layout>
+
+<script>
+
+console.log(import.meta.env);
+console.log(import.meta.env.GOOGLE_SECRET);
+</script>
